@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <link rel="stylesheet" href="./static/css/me.css">
+</head>
+
+<body>
+    <!--导航-->
+    <nav>
+        <div class="ui container">
+            <div class="ui inverted secondary menu">
+                <h1 class="ui blue header item">锈渎</h1>
+                <a href="#" class="item"><i class="home icon"></i>首页</a>
+                <a href="#" class="item"><i class="clone outline icon"></i>分类</a>
+                <a href="#" class="item"><i class="clock outline  icon"></i>时间轴</a>
+                <a href="#" class="item"><i class="edit outline  icon"></i>留言板</a>
+                <a href="#" class="item"><i class="info icon"></i>关于我</a>
+
+                <div class="right item">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="搜索..." id="search">
+                        <label for="search">
+                            <i class="search link icon"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--中间元素-->
+    <div id="main">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <!--底部footer-->
+    <footer class="ui inverted vertical segment m-padded-tb">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided grid">
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-mini">联系我</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">QQ:XXXXXXXXX</div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <h4 class="ui inverted header m-opacity-mini">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-mini">小栈信息</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            文章总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 篇
+                        </div>
+                        <div class="item">
+                            评论总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                        <div class="item">
+                            留言总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui inverted section divider"></div>
+            <div class="ui orange header m-text-thin m-text-spaced m-opacity-mini">
+                我的小栈已营业:
+                <span id="run_time"></span>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="./static/lib/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+</body>
+
+<script>
+// -------------------------------------计算并显示网站创建时长------------------------------------------------
+    function CalculateDate(create_time, current_time){ // 计算运行时间;
+        let diff_time = (current_time - create_time) / 1000; //计算时间差,并把毫秒转换成秒
+        let time = [0, 0, 0, 0]; // 日，时，分，秒
+        time[0] = parseInt((diff_time / 86400).toString()); // 天  24*60*60*1000
+        time[1] = parseInt((diff_time / 3600).toString()) - 24 * time[0];    // 小时 60*60 总小时数-过去的小时数=现在的小时数
+        time[2] = parseInt((diff_time % 3600 / 60).toString()); // 分钟 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
+        time[3] = parseInt((diff_time % 60).toString());  // 以60秒为一整份 取余 剩下秒数
+        return time;
+    }
+    setInterval(function (){ // 实时显示页脚营业时间;
+        let create_time = new Date('2023-05-25T18:20:00'); // 网站创建时间
+        let current_time = new Date(); // 现在时间
+        let differ_time = CalculateDate(create_time, current_time);
+        document.getElementById("run_time").innerHTML = differ_time[0] + "天" + differ_time[1] + "时" + differ_time[2] + "分" + differ_time[3] + "秒";
+    }, 1000);
+// -----------------------------------------------------------------------------------------------------
+</script>
+
+</html>
