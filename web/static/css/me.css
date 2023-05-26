@@ -1,6 +1,12 @@
-/*----------test---------------*/
-#main{
-    background: lightblue;
+
+body{
+    background-image: url("../img/background3.jpg");
+    background-attachment:fixed;
+    background-size: 100%;
+    no-repeat: center top;
+    font: 14px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+    height: 100%;
+    width: 100%;
 }
 
 /*-------------------padding-----------*/
@@ -12,7 +18,22 @@
     padding-top: 2em !important;
     padding-bottom: 2em !important;
 }
-
+.m-padded-tiny{
+    padding: 0.3em !important;
+}
+/*-----------------margin----------*/
+.m-margin-top-big{
+    margin-top: 5em !important;
+}
+.m-margin-top-large{
+    margin-top: 2em !important;
+}
+.m-margin-top-negative{
+    margin-top: -7em !important;
+}
+.m-margin-top-max {
+    margin-top: 35px !important;
+}
 
 /*----------text----------*/
 .m-text-thin {
@@ -24,15 +45,102 @@
 .m-text-lined { /*行间距*/
     line-height: 1.8;
 }
+.m-font-size-text{
+    font-size: 30px;
+    color: #ffffff;
 
-/*----------opacity----------------*/
-.m-opacity-mini{
-    opacity: 0.8 !important;
+}
+.m-font-size-text-init-title{
+    font-size: 24px;
+    color: white;
+    align-content: center;
+    /*font-family: 'STXingkai', serif;*/
+    font-style: italic;
 }
 
+.m-font-size-title{
+    font-size: 30px;
+    color: #ffffff;
+    font-family: STSong, serif;
+}
+.m-title-font{
+    font-family: STSong, serif;
+    font-weight: 900;
+    font-size: x-large;
+}
+
+/*--------------color-------------*/
+.m-gradient-color {
+    /*font-size: 30px;*/
+    background: linear-gradient(to right, rgba(0,0,0,.1) 0%, rgba(0,0,0,.8) 50%, rgba(0,0,0,.1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-style: italic;
+}
+.m-black {
+    color: #333 !important;
+}
+
+/*-----------container----------*/
+.m-container-small {
+    max-width: 60em !important;
+    margin: auto !important;
+}
+
+/*----------opacity----------------*/
+.m-opacity{
+    opacity: 0.9 !important;
+}
+.m-opacity-small {
+    opacity: 0.8 !important;
+}
 /*---------display-----------------*/
 .m-inline-block {
     display: inline-block !important;
+}
+
+/*----------遮罩层---------*/
+.m-class_outer{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+/*--------------position------------*/
+.m-right-top{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/*---------center--------*/
+.m-center{
+    text-align: center;
+}
+
+/*-------------img-------------*/
+.m-top-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.m-class_coverIndex{
+    width: 100%;
+    height: 100vh;
+    min-height: 580px;
+    line-height: 50px;
+    padding-left: 6px;
+    /*这里是阴影设置的颜色做后一个0是阴影不透明度*/
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#m-top{
+    width: 100%;
+    height: 100vh;
+    min-height: 580px;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 /*------------html----------------*/
@@ -46,4 +154,17 @@ nav {
     top: 0;
     left: 0;
     font-size: 15px;
+}
+
+.m-mobile-show{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .m-mobile-hide{
+        display: none !important;
+    }
+    .m-mobile-show{
+        display: block !important;
+    }
 }
