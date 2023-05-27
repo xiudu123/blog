@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情</title>
+    <link rel="stylesheet" href="./static/lib/Semantic-UI-2.5.0/dist/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="./static/css/me.css" type="text/css">
+</head>
+
+<body>
+
+    <!--导航-->
+    <nav id="my-nav">
+    <div class="ui container">
+        <div class="ui inverted secondary menu stackable">
+            <h1 class="ui blue header item">锈渎</h1>
+            <a href="#" class="item m-item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="item m-item m-mobile-hide"><i class="clone outline icon"></i>分类</a>
+            <a href="#" class="item m-item m-mobile-hide"><i class="clock outline icon"></i>时间轴</a>
+            <a href="#" class="item m-item m-mobile-hide"><i class="edit outline icon"></i>留言板</a>
+            <a href="#" class="item m-item m-mobile-hide"><i class="info icon"></i>关于我</a>
+
+            <div class="right item m-item m-mobile-hide">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="搜索..." id="search">
+                    <label for="search">
+                        <i class="search link icon"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="menu-toggle" class="ui menu black button icon m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </button>
+</nav>
+
+    <!--中间元素-->
+    <div class=" m-margin-top-big">
+        <div class="ui container"  style="min-width: 60vw">
+            <!--图片-->
+            <div class="ui top attached segment">
+                <img src="./static/img/img2.jpg"  alt="" class="ui rounded rounded image">
+            </div>
+            <!--头部-->
+            <div class="ui attached segment">
+                <div class="ui horizontal link list">
+                    <div class="item">
+                        <img src="./static/img/xiu.jpg" alt="" class="ui avatar image">
+                        <div class="content"><a href="#" target="_blank" class="header"  >xiu du</a></div>
+                    </div>
+                    <div class="item">
+                        <i class="calendar icon"></i><span>2023-05-26</span>
+                    </div>
+                    <div class="item">
+                        <i class="eye icon"></i> <span>2222</span>
+                    </div>
+                    <div class="item">
+                        <i class="comment outline icon"></i> <span>2222</span>
+                    </div>
+                </div>
+            </div>
+            <!--内容-->
+            <div class="ui attached padded segment">
+                <h2 class="ui center aligned  header">标题</h2>
+                <br>
+                <div class="m-padded-lr-responsive m-padded-tb" >
+                    <h2>A. Theatre Square</h2>
+                    <h5>题意</h5>
+                    <p>有一个 n × m 的矩形，至少需要多少个大小为 a × a 的正方形能覆盖。</p>
+                    <h5>思路</h5>
+                    <p>计算覆盖长、宽至少需要的正方形数量，相乘</p>
+                    <h5>代码</h5>
+
+                    <code class="language-c">
+                        /*
+                        When I wrote this, only God and I understood what I was doing
+                        Now, only God knows
+                        */
+                        #include &lt bits/stdc++.h &gt
+                        #define int long long
+                        typedef long long ll;
+                        typedef unsigned long long ull;
+                        void slove();
+                        void main_init();
+                        void solve_init();
+                        // -----------------------------
+                        int32_t main(){
+                        std::ios::sync_with_stdio(false);
+                        std::cin.tie(nullptr), std::cout.tie(nullptr);
+                        std::cout << (std::setiosflags(std::ios::fixed)) << std::setprecision(12);
+                        int T = 1;
+                        //    std::cin >> T;
+                        main_init();
+                        while(T --){solve_init(), slove();}
+                        return 0;
+                        }
+                        // ----------------------------
+
+                        void main_init(){}
+                        void solve_init(){}
+                        void slove(){
+                        int n, m, a;
+                        std::cin >> n >> m >> a;
+                        std::cout << ((n + a - 1) / a) * ((m + a -1) / a) << '\n';
+                        }
+                    </code>
+
+
+                    <h2> B. Spreadsheets</h2>
+                    <h5> 题意</h5>
+                    两种表示excel表格的方式RXCY（第X行第Y列）、BC23（BC表示列，23表示行）的相互转换。
+                    <h5> 思路</h5>
+                    模拟，26进制和10进制的相互转换
+                    <h5> 代码</h5>
+                    <code>
+                    /*
+                    When I wrote this, only God and I understood what I was doing
+                    Now, only God knows
+                    */
+                    #include &lt bits/stdc++.h &gt
+                    #define int long long
+                    typedef long long ll;
+                    typedef unsigned long long ull;
+                    void slove();
+                    void main_init();
+                    void solve_init();
+                    // -----------------------------
+                    int32_t main(){
+                    std::ios::sync_with_stdio(false);
+                    std::cin.tie(nullptr), std::cout.tie(nullptr);
+                    std::cout << (std::setiosflags(std::ios::fixed)) << std::setprecision(12);
+                    int T = 1;
+                    std::cin >> T;
+                    main_init();
+                    while(T --){solve_init(), slove();}
+                    return 0;
+                    }
+                    // ----------------------------
+
+                    void main_init(){}
+                    void solve_init(){}
+                    void slove(){
+                    std::string str;
+                    std::cin >> str;
+
+                    std::function < std::string(void)> work1 = [&]() -> std::string{
+                    int id = str.find('C');
+                    int x = 0;
+                    for(int i = id + 1; i < str.size(); ++ i) x = x * 10 + str[i] - '0';
+                    std::string ans;
+                    while (x){
+                    int y = ((x - 1) % 26);
+                    x = (x - 1) / 26;
+                    ans.push_back(char(y + 'A'));
+                    }
+                    std::reverse(ans.begin(), ans.end());
+                    return ans + str.substr(1, id - 1);
+                    };
+
+                    std::function < std::string(void)> work2 = [&]() -> std::string{
+                    int x = 0, id = 0;
+                    for(int i = 0; i < str.size(); ++ i){
+                    id = i;
+                    if(std::isdigit(str[i])) break;
+                    x = x * 26 + (str[i] - 'A' + 1);
+                    }
+                    return "R" + str.substr(id) + "C" + std::to_string(x);
+                    };
+
+                    int id = str.find('C', 1);
+                    if(str[0] == 'R' && id != std::string::npos && std::isdigit(str[id - 1])){
+                    std::cout << work1() << '\n';
+                    }else std::cout << work2() << '\n';
+                    }
+                    </code>
+
+                    <h2> C. Ancient Berland Circus</h2>
+                    <h5> 题意</h5>
+                    <p>给定三个点，求以这三个点为顶点的最小正多边形的面积</p>
+
+                    <code>
+                    /*
+                    When I wrote this, only God and I understood what I was doing
+                    Now, only God knows
+                    */
+                    #define _USE_MATH_DEFINES
+                    #include < bits/stdc++.h>
+                    #define int long long
+                    typedef long long ll;
+                    typedef unsigned long long ull;
+                    void slove();
+                    void main_init();
+                    void solve_init();
+                    // -----------------------------
+                    int32_t main(){
+                    std::ios::sync_with_stdio(false);
+                    std::cin.tie(nullptr), std::cout.tie(nullptr);
+                    std::cout << (std::setiosflags(std::ios::fixed)) << std::setprecision(12);
+                    int T = 1;
+                    //     std::cin >> T;
+                    main_init();
+                    while(T --){solve_init(), slove();}
+                    return 0;
+                    }
+                    // ----------------------------
+
+                    void main_init(){}
+                    void solve_init(){}
+                    class Point{
+                    static constexpr double eps = 1e-8;
+                    static int sign(double x){ // 判符号;
+                    if(fabs(x) < eps) return 0;
+                    return x < 0 ? -1 : 1;
+                    }
+                    static int cmp(double a, double b){ // 1 -> a>b, 0 -> a=b, -1 -> a < b;
+                    if(fabs(a - b) < eps) return 0;
+                    return a > b ? 1 : -1;
+                    }
+                    public:
+                    double x, y;
+                    Point(double x= 0, double y= 0):x(x), y(y){};
+                    friend Point operator + (const Point a, const Point b){return {a.x + b.x, a.y + b.y};}
+                    friend Point operator - (const Point a, const Point b){return {a.x - b.x, a.y - b.y};}
+                    friend Point operator * (const Point a, double p){return {a.x * p, a.y * p};}
+                    friend Point operator / (const Point a, double p){return {a.x / p, a.y / p};}
+                    friend bool operator == (const Point a, const Point b){return !cmp(a.x, b.x) && !cmp(a.y, b.y);}
+
+                    // 点积;
+                    friend double operator * (const Point a, const Point b){return a.x * b.x + a.y * b.y;}
+                    // ×积; 几何意义: 两向量组成的平行四边形的面积; 角度逆时针为正，顺时针为负;
+                    friend double operator ^ (const Point a, const Point b){return a.x * b.y - b.x * a.y;}
+                    // 获取向量长度;
+                    double get_length(){return __builtin_sqrt(x * x + y * y);}
+                    // 长度平方;
+                    double get_length2(){return x * x + y * y;}
+                    // 两点之间的距离;
+                    double get_distance(Point p){return hypot(x - p.x, y - p.y);}
+                    // 向量之间的夹角;
+                    double get_angle(Point b){return acos((*this * b) / hypot(x, y) / hypot(b.x, b.y));}
+                    // 向量ab, ac构成的平行四边形的面积, ac在ab的逆时针方向, *this为a点;
+                    double get_area(Point b, Point c){return (b - *this) ^ (c - *this);}
+                    // 判断点与直线ab的关系, 1 -> left, 0 -> in, -1 -> right；
+                    int get_relation(Point a, Point b){return sign((b - a) ^ (*this -a));}
+                    // 判断点是否在 线段ab 上;
+                    bool on_Segment(Point a, Point b){
+                    return !sign((a - *this) ^ (b - *this)) && ((a - *this) * (b - *this) <= 0);
+                    }
+
+                    // 绕 点p 逆时针旋转 angle°;
+                    Point rotate(Point p,double angle){
+                    Point v = (*this) - p;
+                    double c = cos(angle), s = sin(angle);
+                    return {p.x + v.x*c - v.y*s,p.y + v.x*s + v.y*c};
+                    }
+                    // 返回单位向量;
+                    Point norm(){return *this / (this -> get_length());}
+                    friend std::istream &operator>>(std::istream &is, Point &a) {return is >> a.x >> a.y, is;}
+                    friend std::ostream &operator<<(std::ostream &os, Point &a) {return os << a.x << ' ' << a.y, os;}
+                    };
+
+
+                    constexpr double eps = 1e-4;
+                    double fgcd(double a,double b){
+                    return fabs(b) < eps ? fabs(a) : fgcd(b,fmod(a,b));
+                    }
+
+                    void slove(){
+                    std::vector< Point > p(3);
+                    Point O;
+                    for(int i = 0; i < 3; ++ i) std::cin >> p[i].x >> p[i].y;
+                    double a = sqrt((p[0].x - p[1].x) * (p[0].x - p[1].x) + (p[0].y - p[1].y) * (p[0].y - p[1].y));
+                    double c = sqrt((p[0].x - p[2].x) * (p[0].x - p[2].x) + (p[0].y - p[2].y) * (p[0].y - p[2].y));
+                    double b = sqrt((p[1].x - p[2].x) * (p[1].x - p[2].x) + (p[1].y - p[2].y) * (p[1].y - p[2].y));
+                    double s = 0.5 * fabs(p[0].x * p[1].y + p[1].x * p[2].y + p[2].x * p[0].y - p[0].x * p[2].y - p[1].x * p[0].y - p[2].x * p[1].y);
+                    double r = 0.25 * a * b * c / s;
+                    double A = asin(2 * s / (b * c));
+                    double B = asin(2 * s / (c * a));
+                    double C = asin(2 * s / (b * a));
+                    double pi = atan2(0, -1);
+                    double t = 0;
+                    if(fabs((2 * s / (b * c) - 1)) > eps && fabs(2 * s / (c * a) - 1) > eps)t = fgcd(pi, fgcd(A, B));
+                    else if(fabs((2 * s / (b * c) - 1)) > eps && fabs(2 * s / (b * a) - 1) > eps)t = fgcd(pi, fgcd(A, C));
+                    else if(fabs((2 * s / (c * a) - 1)) > eps && fabs(2 * s / (b * a) - 1) > eps)t = fgcd(pi, fgcd(B, C));
+
+                    std::cout << 0.5 * pi * r * r * sin(2 * t) / t << '\n';
+                    }
+                    </code>
+                </div>
+            </div>
+            <!--博客信息-->
+            <div class="ui attached positive message">
+                <div class="ui middle aligned divided grid">
+                    <div class="three wide column" align="center">
+                            <img src="./static/img/xiu.jpg" alt="" class="ui rounded bordered image" style="width: 110px">
+                    </div>
+                    <div class="thirteen wide column" style="color: black">
+                        <ui class="list">
+                            <li>作者：锈渎</li>
+                            <li>发布时间：2023-05-26</li>
+                            <li>更新时间：2023-05-26</li>
+                        </ui>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--留言区域-->
+            <div class="ui bottom attached segment">
+                <div class="ui segment">
+                    <div class="ui threaded comments">
+                        <h3 class="ui dividing header">Comments</h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="./static/img/xiu.jpg" alt="">
+                            </a>
+                            <div class="content">
+                                <a class="author">Matt</a>
+                                <div class="metadata">
+                                    <span class="date">Today at 5:42PM</span>
+                                </div>
+                                <div class="text">
+                                    How artistic!
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="./static/img/xiu.jpg" alt="">
+                            </a>
+                            <div class="content">
+                                <a class="author">Elliot Fu</a>
+                                <div class="metadata">
+                                    <span class="date">Yesterday at 12:30AM</span>
+                                </div>
+                                <div class="text">
+                                    <p>This has been very useful for my research. Thanks as well!</p>
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <img src="./static/img/xiu.jpg" alt="">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">Jenny Hess</a>
+                                        <div class="metadata">
+                                            <span class="date">Just now</span>
+                                        </div>
+                                        <div class="text">
+                                            Elliot you are always so right :)
+                                        </div>
+                                        <div class="actions">
+                                            <a class="reply">回复</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <img src="./static/img/xiu.jpg" alt="">
+                            </a>
+                            <div class="content">
+                                <a class="author">Joe Henderson</a>
+                                <div class="metadata">
+                                    <span class="date">5 days ago</span>
+                                </div>
+                                <div class="text">
+                                    Dude, this is awesome. Thanks so much
+                                </div>
+                                <div class="actions">
+                                    <a class="reply">回复</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui form">
+                    <div class="field">
+                        <label>
+                            <textarea name="content" placeholder="请输入评论..."></textarea>
+                        </label>
+                    </div>
+                    <div class="fields">
+                        <div class="field m-mobile-wide m-margin-button-small">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" placeholder="姓名">
+                            </div>
+
+                        </div>
+                        <div class="field m-mobile-wide m-margin-button-small">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="email" name="email" placeholder="邮箱">
+                            </div>
+                        </div>
+                        <div class="field m-mobile-wide m-margin-button-small">
+                            <button class="ui blue button m-mobile-wide"><i class="edit icon"></i> 发布</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+    <!--底部footer-->
+    <footer class="ui inverted vertical segment  m-padded-tb m-opacity m-margin-top-big">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-small">联系我</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">QQ:XXXXXXXXX</div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <h4 class="ui inverted header m-opacity-small">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-small">小栈信息</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            文章总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 篇
+                        </div>
+                        <div class="item">
+                            评论总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                        <div class="item">
+                            留言总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui inverted section divider"></div>
+            <div class="ui orange header m-text-thin m-text-spaced m-opacity-small">
+                我的小栈已营业:
+                <span id="run_time"></span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./static/lib/jquery-3.0.0/jquery-3.0.0.min.js"></script>
+    <script src="./static/lib/Semantic-UI-2.5.0/dist/semantic.min.js"></script>
+    <script src="static/js/footer_time.js"></script>
+</body>
+<script>
+
+$('#menu-toggle').click(function (){
+    $(".m-item").toggleClass("m-mobile-hide") // 有这个"m-mobile-hide"类就加上这个类否则就删去这个类
+});
+
+</script>
+
+</html>
