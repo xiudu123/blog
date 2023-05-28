@@ -38,7 +38,7 @@
 
 
     <!--顶部图片-->
-    <div id="m-top_index">
+    <div id="m-top_index" style="min-height: 65vh">
         <img src="./static/img/lufei.jpg" alt="" class="ui image m-top-img">
         <div class="m-class_coverIndex m-center" >
             <div class="m-margin-top-large" align="center">
@@ -58,7 +58,7 @@
             </div>
 
             <div class="ui container m-margin-top-big" style="margin-bottom: 0; padding-bottom: 0">
-                <a href="#main" class="ui circular icon button m-opacity-small"><i class="home icon"></i> 首页</a>
+                <a href="#main-index" class="ui circular icon button m-opacity-small"><i class="home icon"></i> 首页</a>
                 <a href="#" class="ui circular icon button m-opacity-small"><i class="clone outline icon"></i> 分类</a>
                 <a href="#" class="ui circular icon button m-opacity-small"><i class="clock outline  icon"></i> 时间轴</a>
                 <a href="#" class="ui circular icon button m-opacity-small"><i class="edit outline  icon"></i> 留言板</a>
@@ -67,20 +67,23 @@
             <div id="waypoint" style="margin-top: 0;padding-top: 0"></div>
         </div>
     </div>
-    <div  id="main"></div>
+    <div  id="main-index"></div>
 
 
     <!--中间元素-->
-    <div class="m-margin-top-big">
+    <div id="main" class="m-margin-top-big">
         <div class="ui container stacked grid">
             <div class="ui vertical segment">
-
                 <!--博客-->
                 <div class="ui padded segment m-opacity">
+
                     <div class="ui mobile reversed stackable grid  m-margin-top-large">
                         <!--博文信息-->
                         <div class="eleven wide column">
-                            <h3 class="ui header" ><a href="#" target="_blank" class="m-black m-title-font">大圣，此去欲何?</a></h3>
+                            <h3 class="ui header" >
+                                <a href="#" target="_blank" class="m-black m-title-font">大圣，此去欲何?</a>
+                                <div class="ui mini blue basic button" style="margin-left: 10px">置顶</div>
+                            </h3>
                             <p class="m-text m-margin-top-max">戴上金箍，没法爱你；放下金箍，没法保护你。我知道上天不会给我第二次机会，曾经我们说好的永远，原来也仅仅只有，十二画，而已。“大圣，此去欲何?”“踏南天，碎凌霄。”“若一去不回……”“便一去不回” 其实很多时候，我们都是有机会的，最后真正放弃的，是我们自己。......</p>
                             <div class="ui m-margin-top-max stackable grid">
                                 <div class="eleven wide column">
@@ -212,6 +215,10 @@
 
     </div>
 
+    <!--置顶图标-->
+    <div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom toTop-button">
+        <div class="ui teal icon button"><i class="chevron up icon"></i> </div>
+    </div>
     <!--底部footer-->
     <footer class="ui inverted vertical segment  m-padded-tb m-opacity m-margin-top-big">
         <div class="ui center aligned container">
@@ -259,6 +266,7 @@
     <script src="./static/lib/jquery-3.0.0/jquery-3.0.0.min.js"></script>
     <script src="./static/lib/Semantic-UI-2.5.0/dist/semantic.min.js"></script>
     <script src="./static/lib/waypoints/jquery.waypoints.min.js"></script>
+    <script src="./static/lib/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script src="static/js/footer_time.js"></script>
 <!--    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>-->
 </body>
@@ -280,8 +288,10 @@
         handler: function (direction) {
             if (direction === 'down') {
                 $('#my-nav').show(500);
+                $('#toolbar').show(500);
             } else {
                 $('#my-nav').hide(500);
+                $('#toolbar').hide(500);
             }
             // console.log('Scrolled to waypoint!  ' + direction);
         }

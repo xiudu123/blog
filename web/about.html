@@ -12,40 +12,40 @@
 
     <!--导航-->
     <nav id="my-nav">
-    <div class="ui container">
-        <div class="ui inverted secondary menu stackable">
-            <h1 class="ui blue header item">锈渎</h1>
-            <a href="#" class="item m-item m-mobile-hide"><i class="home icon"></i>首页</a>
-            <a href="#" class="item m-item m-mobile-hide"><i class="clone outline icon"></i>分类</a>
-            <a href="#" class="item m-item m-mobile-hide"><i class="clock outline icon"></i>时间轴</a>
-            <a href="#" class="item m-item m-mobile-hide"><i class="edit outline icon"></i>留言板</a>
-            <a href="#" class="item m-item m-mobile-hide active"><i class="info icon"></i>关于我</a>
+        <div class="ui container">
+            <div class="ui inverted secondary menu stackable">
+                <h1 class="ui blue header item">锈渎</h1>
+                <a href="#" class="item m-item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="clone outline icon"></i>分类</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="clock outline icon"></i>时间轴</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="edit outline icon"></i>留言板</a>
+                <a href="#" class="item m-item m-mobile-hide active"><i class="info icon"></i>关于我</a>
 
-            <div class="right item m-item m-mobile-hide">
-                <div class="ui icon inverted transparent input">
-                    <input type="text" placeholder="搜索..." id="search">
-                    <label for="search">
-                        <i class="search link icon"></i>
-                    </label>
+                <div class="right item m-item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="搜索..." id="search">
+                        <label for="search">
+                            <i class="search link icon"></i>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button id="menu-toggle" class="ui menu black button icon m-right-top m-mobile-show">
-        <i class="sidebar icon"></i>
-    </button>
-</nav>
+        <button id="menu-toggle" class="ui menu black button icon m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </button>
+    </nav>
 
     <div class="m-bg-type_outer" style="width: 100%; height: 40%">
         <img src="./static/img/Ace.jpg" alt="" class="ui m-bg image">
-            <div class="ui container" style="position: relative ;top: -540px;">
-                <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai',serif;" >关于我</div>
-                <div class="m-font-size-text-init-title m-margin-top" align="center">我们绝对要过一个无悔的人生!<br>总有一天,我们要踏上这片海洋,按照自己的梦想去闯荡!<br>我们要过上最自由的人生!<br>——艾斯</div>
-            </div>
+        <div class="ui container" style="position: relative ;top: -540px;">
+            <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai',serif;" >关于我</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">我们绝对要过一个无悔的人生!<br>总有一天,我们要踏上这片海洋,按照自己的梦想去闯荡!<br>我们要过上最自由的人生!<br>——艾斯</div>
+        </div>
     </div>
 
     <!--中间元素-->
-    <div class="m-margin-top-large">
+    <div id="main" class="m-margin-top-large">
         <div class="ui container segment m-opacity m-center">
             <div class="m-margin-top-large" align="center">
                 <img src="./static/img/xiu.jpg" alt="" class="ui circular small image">
@@ -67,11 +67,11 @@
 
     </div>
 
+    <!--置顶图标-->
+    <div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom toTop-button">
+        <div class="ui teal icon button"><i class="chevron up icon"></i> </div>
+    </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
     <!--底部footer-->
     <footer class="ui inverted vertical segment  m-padded-tb m-opacity m-margin-top-big">
         <div class="ui center aligned container">
@@ -117,21 +117,23 @@
 
     <script src="./static/lib/jquery-3.0.0/jquery-3.0.0.min.js"></script>
     <script src="./static/lib/Semantic-UI-2.5.0/dist/semantic.min.js"></script>
-    <script src="static/js/footer_time.js"></script>
+    <script src="./static/lib/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="./static/js/footer_time.js"></script>
 </body>
+
 <script>
 // 显示QQ
 $('.My_qq').popup({
     popup : $('.My_qq_qr'),
     position: 'bottom center'
 });
+
 // 显示github
 $('.My_github').popup();
 
 $('#menu-toggle').click(function (){
     $(".m-item").toggleClass("m-mobile-hide") // 有这个"m-mobile-hide"类就加上这个类否则就删去这个类
 });
-
 </script>
 
 </html>

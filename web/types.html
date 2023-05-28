@@ -45,7 +45,7 @@
     </div>
 
     <!--中间元素-->
-    <div class="m-margin-top-big">
+    <div id="main" class="m-margin-top-big">
         <div class="ui container">
             <div class="ui segment m-padded-tb-large m-opacity">
                 <div class="ui container center aligned">
@@ -109,13 +109,15 @@
             </div>
 
             <div class="ui top attached green segment m-opacity ">
-
                 <!--博客-->
                 <div class="ui padded vertical segment">
                     <div class="ui mobile reversed stackable grid  m-margin-top-large">
                         <!--博文信息-->
                         <div class="eleven wide column">
-                            <h3 class="ui header" ><a href="#" target="_blank" class="m-black m-title-font">大圣，此去欲何?</a></h3>
+                            <h3 class="ui header" >
+                                <a href="#" target="_blank" class="m-black m-title-font">大圣，此去欲何?</a>
+                                <div class="ui mini blue basic button" style="margin-left: 10px">置顶</div>
+                            </h3>
                             <p class="m-text m-margin-top-max">戴上金箍，没法爱你；放下金箍，没法保护你。我知道上天不会给我第二次机会，曾经我们说好的永远，原来也仅仅只有，十二画，而已。“大圣，此去欲何?”“踏南天，碎凌霄。”“若一去不回……”“便一去不回” 其实很多时候，我们都是有机会的，最后真正放弃的，是我们自己。......</p>
                             <div class="ui m-margin-top-max stackable grid">
                                 <div class="eleven wide column">
@@ -206,11 +208,10 @@
         </div>
     </div>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
+    <!--置顶图标-->
+    <div id="toolbar" class="m-padded-tb-large m-fixed m-right-bottom toTop-button">
+        <div class="ui teal icon button"><i class="chevron up icon"></i> </div>
+    </div>
     <!--底部footer-->
     <footer class="ui inverted vertical segment  m-padded-tb m-opacity m-margin-top-big">
         <div class="ui center aligned container">
@@ -256,6 +257,7 @@
 
     <script src="./static/lib/jquery-3.0.0/jquery-3.0.0.min.js"></script>
     <script src="./static/lib/Semantic-UI-2.5.0/dist/semantic.min.js"></script>
+    <script src="./static/lib/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script src="static/js/footer_time.js"></script>
 </body>
 <script>

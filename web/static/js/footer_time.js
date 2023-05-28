@@ -15,3 +15,7 @@ setInterval(function (){ // 实时显示页脚营业时间;
     document.getElementById("run_time").innerHTML = differ_time[0] + "天" + differ_time[1] + "时" + differ_time[2] + "分" + differ_time[3] + "秒";
 }, 1000);
 // -----------------------------------------------------------------------------------------------------
+
+$('#toolbar').click(function (){
+    $(window).scrollTo(0, 500);
+});

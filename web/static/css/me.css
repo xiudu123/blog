@@ -26,6 +26,9 @@
     padding-top: 3em !important;
     padding-bottom: 2em !important;
 }
+.m-padded-top {
+    padding-top: 5em !important;
+}
 /*-----------------margin----------*/
 .m-margin-top-big{
     margin-top: 5em !important;
@@ -130,7 +133,7 @@
     right: 0;
 }
 .m-right-bottom {
-    bottom: 0 !important;
+    bottom: 20px !important;
     right: 0 !important;
 }
 /*---------center--------*/
@@ -205,6 +208,13 @@
     left: 0px;
     bottom: 0px;
 }
+.m-fixed{
+    position: fixed !important;
+    z-index: 10 !important;
+}
+.m-show{
+    z-index: 1025 !important;
+}
 /*------------html----------------*/
 
 body{
@@ -224,10 +234,13 @@ nav {
     opacity: 0.5;
     position: fixed;
     background-color: rgba(0,0,0,1);
-    z-index: 2147483647;
+    z-index: 1024;
     top: 0;
     left: 0;
     font-size: 15px;
+}
+#main {
+    min-height: 70vh !important;
 }
 .my-footer{
     position: absolute !important;
