@@ -29,7 +29,7 @@ public class LogAspect {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     // 切面
-    @Pointcut("execution(* com.xiudu.blog.web.*.*(..))")
+    @Pointcut("execution(* com.xiudu.blog.controller.*.*(..))")
     public void log(){}
 
     // 切面之前执行

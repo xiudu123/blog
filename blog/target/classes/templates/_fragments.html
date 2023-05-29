@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}">详情</title>
+    <link rel="stylesheet" href="../static/lib/Semantic-UI-2.5.0/dist/semantic.min.css" type="text/css" th:href="@{/lib/Semantic-UI-2.5.0/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="../static/css/me.css" type="text/css" th:href="@{/css/me.css}">
+</head>
+<body>
+
+    <!--导航-->
+    <nav th:fragment="menu(n)" id="my-nav">
+        <div class="ui container">
+            <div class="ui inverted secondary menu stackable">
+                <h1 class="ui blue header item">锈渎</h1>
+                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n == 1} ? 'active' : '' "><i class="home icon"></i>首页</a>
+                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n == 2} ? 'active' : '' "><i class="clone outline icon"></i>分类</a>
+                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n == 3} ? 'active' : '' "><i class="clock outline icon"></i>时间轴</a>
+                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n == 4} ? 'active' : '' "><i class="edit outline icon"></i>留言板</a>
+                <a href="#" class="item m-item m-mobile-hide" th:classappend="${n == 5} ? 'active' : '' "><i class="info icon"></i>关于我</a>
+
+                <div class="right item m-item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="搜索..." id="search">
+                        <label for="search">
+                            <i class="search link icon"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="menu-toggle" class="ui menu black button icon m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </button>
+    </nav>
+
+    <!--底部footer-->
+    <footer th:fragment = "tooter" class="ui inverted vertical segment  m-padded-tb m-opacity m-margin-top-big">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-small">联系我</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">QQ:XXXXXXXXX</div>
+                    </div>
+                </div>
+                <div class="six wide column">
+                    <h4 class="ui inverted header m-opacity-small">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                        <a href="#" class="item">这是一篇博客</a>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-opacity-small">博客信息</h4>
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            文章总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 篇
+                        </div>
+                        <div class="item">
+                            评论总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                        <div class="item">
+                            留言总数: <div class="ui orange header m-inline-block">&nbsp;200&nbsp;</div> 条
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui inverted section divider"></div>
+            <div class="ui orange header m-text-thin m-text-spaced m-opacity-small">
+                我的博客已营业:
+                <span id="run_time"></span>
+            </div>
+
+        </div>
+    </footer>
+
+    <th:block th:fragment = "script">
+        <script src="../static/lib/jquery-3.0.0/jquery-3.0.0.min.js" th:src="@{/lib/jquery-3.0.0/jquery-3.0.0.min.js}"></script>
+        <script src="../static/lib/Semantic-UI-2.5.0/dist/semantic.min.js" th:src="@{/lib/Semantic-UI-2.5.0/dist/semantic.min.js}"></script>
+        <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+        <script src="../static/lib/jquery-scrollTo/jquery.scrollTo.min.js" th:src="@{/lib/jquery-scrollTo/jquery.scrollTo.min.js}"></script>
+        <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+        <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+        <script src="../static/js/footer_time.js" th:src="@{/js/footer_time.js}"></script>
+    </th:block>
+
+</body>
+</html>
